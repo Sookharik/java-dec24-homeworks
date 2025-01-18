@@ -1,4 +1,5 @@
 ### IntelliJ IDEA ###
+out
 .idea/
 .targert/
 .git/
@@ -8,4 +9,4 @@
 
 ### Mac OS ###
 .DS_Store
-/pom.xml
+
