@@ -1,6 +1,4 @@
-package ru.otus.java.basic.homeworks.HW7;
-
-import java.util.Arrays;
+package ru.otus.java.basic.homeworks.hw7;
 
 public class AppHw7 {
 
@@ -11,11 +9,10 @@ public class AppHw7 {
                 {7, 8, 9}
         };
 
-        sumOfPositiveElements(intArray);
+        System.out.println(sumOfPositiveElements(intArray));
         printSquare(4);
         diagonalZeroing(intArray);
-        findMax(intArray);
-        sumTwoLine(intArray);
+        System.out.println(findMax(intArray));
         System.out.println(sumTwoLine(intArray));
     }
 
@@ -24,7 +21,7 @@ public class AppHw7 {
      * метод должен посчитать и вернуть сумму всех элементов массива, которые больше 0;
      */
 
-    public static void sumOfPositiveElements(int[][] intArray) {
+    public static int sumOfPositiveElements(int[][] intArray) {
         int sumStr = 0;
         int sumArrays = 0;
         for (int i = 0; i < intArray.length; i++) {
@@ -35,7 +32,7 @@ public class AppHw7 {
             }
         }
         sumArrays += sumStr;
-        System.out.println(sumArrays);
+        return sumArrays;
     }
 
     /**
@@ -44,11 +41,9 @@ public class AppHw7 {
      */
 
     public static void printSquare(int size) {
-        char[][] array = new char[size][size];
-        for (int i = 0; i < array.length; i++) {
-            for (int j = 0; j < array[i].length; j++) {
-                array[i][j] = '*';
-                System.out.print(array[i][j] + " ");
+        for (int i = 0; i < size; i++) {
+            for (int j = 0; j < size; j++) {
+                System.out.print('*' + " ");
             }
             System.out.println();
         }
@@ -74,8 +69,8 @@ public class AppHw7 {
      * Реализовать метод findMax(int[][] array) который должен найти и вернуть максимальный элемент массива;
      */
 
-    public static void findMax(int[][] array) {
-        int max = 0;
+    public static int findMax(int[][] array) {
+        int max = array[0][0];
         for (int i = 0; i < array.length; i++) {
             for (int j = 0; j < array[i].length; j++) {
                 if (array[i][j] > max) {
@@ -83,7 +78,7 @@ public class AppHw7 {
                 }
             }
         }
-        System.out.println(max);
+        return max;
     }
 
     /**
