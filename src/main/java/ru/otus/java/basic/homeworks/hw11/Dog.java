@@ -11,13 +11,13 @@ public class Dog extends Animal {
     }
 
     public void swim(int distance) {
-        if (endurance < (distance * 1)) {
+        if (endurance < (distance * index)) {
             info();
             System.out.println("Время: " + "-1" + " " + timeUnit);
             System.out.println("Животное устало");
         }
         if (endurance >= (distance * index)) {
-            endurance = endurance - (distance * 1);
+            endurance = endurance - (distance * index);
             time = distance / swimSpeed;
             info();
             System.out.println("Проплыл дистанцию " + distance + " за " + time + " " + timeUnit);

@@ -7,7 +7,8 @@ public class Main {
         Animal horse = new Horse("Плотва", 20, 5, 200);
 
         cat.info();
-        cat.run(20);
+        cat.run(4);
+        cat.run(4);
         cat.swim(1);
 
         dog.info();
