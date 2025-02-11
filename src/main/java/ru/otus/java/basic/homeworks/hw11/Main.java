@@ -1,5 +1,7 @@
 package ru.otus.java.basic.homeworks.hw11;
 
+import ru.otus.java.basic.homeworks.hw11.animal.*;
+
 public class Main {
     public static void main(String[] args) {
         Animal cat = new Cat("Том", 5, 4);

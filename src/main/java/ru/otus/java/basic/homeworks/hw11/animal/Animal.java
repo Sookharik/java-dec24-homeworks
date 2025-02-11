@@ -1,4 +1,4 @@
-package ru.otus.java.basic.homeworks.hw11;
+package ru.otus.java.basic.homeworks.hw11.animal;
 
 /**
  * Создайте классы Cat, Dog и Horse с наследованием от класса Animal
@@ -25,34 +25,30 @@ public class Animal {
     String speedUnit = "м/с";
     String enduranceUnit = "у.е.";
     String timeUnit = "секунд";
+    int swimIndex;
 
-    public void run(int distance) {
+    public double run(int distance) {
         if (endurance < (distance * 1)) {
             info();
-            System.out.println("Время: " + "-1" + " " + timeUnit);
             System.out.println("Животное устало");
+            return time = -1;
         }
-        if (endurance >= (distance * 1)) {
-            endurance = endurance - (distance * 1);
-            time = distance / runSpeed;
-            info();
-            System.out.println("Пробежал дистанцию " + distance + " за " + time + " " + timeUnit);
-        }
-
+        endurance = endurance - (distance * 1);
+        time = distance / runSpeed;
+        info();
+        return time;
     }
 
-    public void swim(int distance) {
+    public double swim(int distance) {
         if (endurance < (distance * 1)) {
             info();
-            System.out.println("Время: " + "-1" + " " + timeUnit);
             System.out.println("Животное устало");
+            return time = -1;
         }
-        if (endurance >= (distance * 1)) {
-            endurance = endurance - (distance * 1);
-            time = distance / swimSpeed;
-            info();
-            System.out.println("Проплыл дистанцию " + distance + " за " + time + " " + timeUnit);
-        }
+        endurance = endurance - (distance * 1);
+        time = distance / swimSpeed;
+        info();
+        return time;
     }
 
     public void info() {
@@ -61,6 +57,7 @@ public class Animal {
         System.out.println("Выносливость: " + endurance + " " + enduranceUnit);
         System.out.println("Скорость бега: " + runSpeed + " " + speedUnit);
         System.out.println("Скорость плаванья: " + swimSpeed + " " + speedUnit);
+        System.out.println("Преодолел(а) дистанцию за " + time + " " + timeUnit);
     }
 }
 

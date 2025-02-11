@@ -1,4 +1,4 @@
-package ru.otus.java.basic.homeworks.hw11;
+package ru.otus.java.basic.homeworks.hw11.animal;
 
 public class Cat extends Animal {
     public Cat(String name, double runSpeed, double endurance) {
@@ -8,9 +8,10 @@ public class Cat extends Animal {
     }
 
     @Override
-    public void swim(int distance) {
+    public double swim(int distance) {
         info();
         System.out.println("Кот плавать не умеет!");
+        return time;
     }
 }
 
