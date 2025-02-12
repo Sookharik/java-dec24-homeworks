@@ -25,7 +25,7 @@ public class Animal {
     String speedUnit = "м/с";
     String enduranceUnit = "у.е.";
     String timeUnit = "секунд";
-    int swimIndex;
+    int swimIndex = 1;
 
     public double run(int distance) {
         if (endurance < (distance * 1)) {
@@ -40,12 +40,12 @@ public class Animal {
     }
 
     public double swim(int distance) {
-        if (endurance < (distance * 1)) {
+        if (endurance < (distance * swimIndex)) {
             info();
             System.out.println("Животное устало");
             return time = -1;
         }
-        endurance = endurance - (distance * 1);
+        endurance = endurance - (distance * swimIndex);
         time = distance / swimSpeed;
         info();
         return time;
@@ -60,4 +60,3 @@ public class Animal {
         System.out.println("Преодолел(а) дистанцию за " + time + " " + timeUnit);
     }
 }
-

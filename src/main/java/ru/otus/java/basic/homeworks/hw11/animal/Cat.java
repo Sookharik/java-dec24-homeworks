@@ -14,4 +14,3 @@ public class Cat extends Animal {
         return time;
     }
 }
-

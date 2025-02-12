@@ -9,17 +9,4 @@ public class Horse extends Animal {
         this.endurance = endurance;
         this.swimIndex = 4;
     }
-
-    public double swim(int distance) {
-        if (endurance < (distance * swimIndex)) {
-            info();
-            System.out.println("Животное устало");
-            return time = -1;
-        }
-        endurance = endurance - (distance * swimIndex);
-        time = distance / swimSpeed;
-        info();
-        return time;
-    }
 }
-
