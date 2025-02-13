@@ -15,28 +15,39 @@ package ru.otus.java.basic.homeworks.hw12;
  * то есть не может быть наполовину сыт (это сделано для упрощения логики программы).
  * Создать массив котов и тарелку с едой, попросить всех котов покушать из этой тарелки и потом вывести информацию о сытости котов в консоль.
  */
+public class Cat {
+    private String name;
+    private int appetite;
+    private boolean isFull;
 
-public class Main {
-    public static void main(String[] args) {
+    public String getName() {
+        return name;
+    }
 
-        Plate plate = new Plate(100);
-        plate.info();
+    public int getAppetite() {
+        return appetite;
+    }
 
-        Cat[] cats = {
-                new Cat("Барсик", 30),
-                new Cat("Мурзик", 40),
-                new Cat("Васька", 50),
-                new Cat("Рыжик", 20)
-        };
+    public Cat(String name, int appetite) {
+        this.name = name;
+        this.appetite = appetite;
+        this.isFull = false;
+    }
 
-        for (int i = 0; i < cats.length; i++) {
-            Cat cat = cats[i];
-            cat.eat(plate);
+    void info() {
+        if (isFull) {
+            System.out.println(name + " сыт");
+            return;
         }
+        System.out.println(name + " голоден");
+    }
 
-        for (int i = 0; i < cats.length; i++) {
-            Cat cat = cats[i];
-            cat.info();
+    public void eat(Plate plate) {
+        if (plate.decreaseFood(appetite)) {
+            isFull = true;
+            System.out.println(name + " поел и теперь сыт.");
+        } else {
+            System.out.println(name + " не смог поесть. В тарелке недостаточно еды.");
         }
     }
 }

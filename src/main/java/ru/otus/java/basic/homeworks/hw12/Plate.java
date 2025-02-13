@@ -15,28 +15,50 @@ package ru.otus.java.basic.homeworks.hw12;
  * то есть не может быть наполовину сыт (это сделано для упрощения логики программы).
  * Создать массив котов и тарелку с едой, попросить всех котов покушать из этой тарелки и потом вывести информацию о сытости котов в консоль.
  */
+public class Plate {
+    private int maxFood;
+    private int amountFood;
 
-public class Main {
-    public static void main(String[] args) {
+    public Plate(int maxFood) {
+        this.maxFood = maxFood;
+        this.amountFood = maxFood;
+    }
 
-        Plate plate = new Plate(100);
-        plate.info();
-
-        Cat[] cats = {
-                new Cat("Барсик", 30),
-                new Cat("Мурзик", 40),
-                new Cat("Васька", 50),
-                new Cat("Рыжик", 20)
-        };
-
-        for (int i = 0; i < cats.length; i++) {
-            Cat cat = cats[i];
-            cat.eat(plate);
+    void addFood(int amount) {
+        if (amount <= 0) {
+            System.out.println("Количество еды должно быть положительным.");
+            return;
         }
-
-        for (int i = 0; i < cats.length; i++) {
-            Cat cat = cats[i];
-            cat.info();
+        int temp = amountFood + amount;
+        if (temp > maxFood) {
+            System.out.println("Нельзя добавить еды. Тарелка переполнится!");
+            System.out.println("Максимальная вместимость: " + maxFood);
+        } else {
+            amountFood += amount;
+            System.out.println("Еда увеличилась на " + amount);
+            System.out.println("Еды в миске " + amountFood);
         }
+    }
+
+    boolean decreaseFood(int amount) {
+        if (amount <= 0) {
+            System.out.println("Количество еды должно быть положительным.");
+            return false;
+        }
+        if (amountFood >= amount) {
+            amountFood -= amount;
+            System.out.println("Еда уменьшилась на " + amount);
+            System.out.println("Еды в миске " + amountFood);
+            return true;
+        } else {
+            System.out.println("Недостаточно еды в тарелке. Требуется: " + amount);
+            System.out.println("Еды в миске " + amountFood);
+            return false;
+        }
+    }
+
+    void info() {
+        System.out.println("Максимальная вместимость: " + maxFood);
+        System.out.println("Еды в миске " + amountFood);
     }
 }
