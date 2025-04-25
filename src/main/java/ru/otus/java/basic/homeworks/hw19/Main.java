@@ -11,7 +11,7 @@ public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        String rootDirectory = "/home/panov/IdeaProjects/java-dec24-homeworks/src/main/java/ru/otus/java/basic/homeworks/hw19";
+        String rootDirectory = System.getProperty("user.dir");
 
         try {
             List<String> textFiles = getTextFiles(rootDirectory);
